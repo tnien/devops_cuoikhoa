@@ -1,0 +1,41 @@
+---
+- name: Setup and Deploy MERN App
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Update apt
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name:
+          - docker.io
+          - docker-compose-v2
+          - git
+        state: present
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Add ubuntu user to docker group
+      user:
+        name: ubuntu
+        groups: docker
+        append: yes
+
+    - name: Clone repository
+      git:
+        repo: https://github.com/tnien/devops_cuoikhoa.git
+        dest: /home/ubuntu/devops_cuoikhoa
+        version: main
+        force: yes
+
+    - name: Start all containers
+      shell: docker compose up -d --build
+      args:
+        chdir: /home/ubuntu/devops_cuoikhoa
