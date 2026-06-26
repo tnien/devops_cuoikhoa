@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh '''
                     cd /home/ubuntu/devops_cuoikhoa
-                    docker compose up -d --build
+                    docker compose up -d --build frontend backend
                 '''
             }
         }
