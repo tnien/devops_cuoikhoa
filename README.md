@@ -62,13 +62,24 @@ MongoDB
 
 ## CI/CD Workflow
 
-# Test
-
 ```mermaid
 flowchart TD
-    A[Developer] --> B[GitHub]
-    B --> C[Jenkins]
-    C --> D[Deploy]
+    A[Developer]
+    B[GitHub]
+    C[Jenkins]
+    D[EC2 Server]
+    E[Docker Compose]
+    F[Frontend]
+    G[Backend]
+    H[MongoDB]
+
+    A -->|git push| B
+    B -->|Trigger Pipeline| C
+    C -->|SSH / Execute Pipeline| D
+    D -->|docker compose up -d --build| E
+    E --> F
+    E --> G
+    E --> H
 ```
 ## Project Architecture
 
