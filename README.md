@@ -1,6 +1,21 @@
 # MERN Todo App - DevOps Final Project
 
-## Tech Stack
+This project demonstrates a complete DevOps pipeline for deploying a MERN Todo application on AWS.
+
+Technologies used:
+
+- AWS EC2
+- Terraform
+- Ansible
+- Docker
+- Docker Compose
+- Jenkins
+- Prometheus
+- Grafana
+- MongoDB
+- GitHub
+
+## Architecture
 - ReactJS
 - NodeJS
 - ExpressJS
