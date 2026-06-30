@@ -1,2 +1,2 @@
 [web]
-18.140.236.20 ansible_user=ubuntu ansible_ssh_private_key_file=/Users/ngtnien/Downloads/mern-key.pem
+13.214.157.154 ansible_user=ubuntu ansible_ssh_private_key_file=/Users/ngtnien/Downloads/mern-key.pem
